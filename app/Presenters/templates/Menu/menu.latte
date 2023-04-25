@@ -1,0 +1,63 @@
+<div class="menu">
+  <nav>
+    <ul>
+      <li><p><a href="/" class="button">Головна</a></p></li>
+      <li><p><a href="/about"class="button">About</a></p></li>
+      <li><p><a href="/news" class="button">Новини</a></p></li>
+     {* <li><p><a href="#"class="button">Контакти</a></p></li> *}
+    </ul>
+  </nav>
+</div>
+<style>
+        .menu {
+         position: fixed;
+         top: 0;
+         right: -250px;
+         width: 250px;
+         height: 100%;
+         background-color: #7289DA;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+         transition: all 0.3s ease-in-out;
+       }
+        /* задаємо стиль для кнопок */
+           .button {
+               padding: 10px 20px;
+               border: none;
+               background-color: #4CAF50;
+               color: #fff;
+               font-size: 16px;
+               border-radius: 5px;
+               transition: background-color 0.5s ease;
+           }
+
+           /* задаємо стиль для кнопок при наведенні */
+           .button:hover {
+               background-color: #fff;
+               color: #4CAF50;
+               cursor: pointer;
+           }
+</style>
+
+
+<script>
+  var menu = document.querySelector('.menu');
+  var isOpen = false;
+
+  menu.addEventListener('mouseenter', function() {
+    isOpen = true;
+  });
+
+  menu.addEventListener('mouseleave', function() {
+    isOpen = false;
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (e.clientX > (window.innerWidth - 50) || isOpen) {
+      menu.style.right = '0';
+    } else {
+      menu.style.right = '-250px';
+    }
+  });
+
+</script>
+
