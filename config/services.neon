@@ -8,3 +8,5 @@ search:
 
 services:
 	- App\Router\RouterFactory::createRouter
+	database: Nette\Database\Connection(%database%)
+

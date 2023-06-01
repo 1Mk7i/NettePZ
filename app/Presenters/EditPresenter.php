@@ -1,6 +1,7 @@
 <?php
 namespace App\Presenters;
 
+use JetBrains\PhpStorm\NoReturn;
 use Nette;
 use Nette\Application\UI\Form;
 
@@ -39,6 +40,20 @@ final class EditPresenter extends Nette\Application\UI\Presenter
         if (!$this->getUser()->isLoggedIn()) {
             $this->redirect('Sign:in');
         }
+    }
+
+    public function renderEdit(int $postId): void
+    {
+        $post = $this->database
+            ->table('posts')
+            ->get($postId);
+
+        if (!$post) {
+            $this->error('Пост не найден');
+        }
+
+        $this->getComponent('postForm')
+            ->setDefaults($post->toArray());
     }
 
 }

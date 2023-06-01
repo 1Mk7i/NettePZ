@@ -7,5 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Thanks\\' => array($vendorDir . '/symfony/thanks/src'),
-    'App\\' => array($baseDir . '/app'),
+    'PHPStan\\' => array($vendorDir . '/phpstan/phpstan-nette/src'),
+    'App\\' => array($baseDir . '/App'),
 );

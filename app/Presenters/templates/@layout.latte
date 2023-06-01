@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width" />
 
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<title>{ifset $title}{$title}{/ifset}</title>
 </head>
-
-<ul class="navig">
-	{if $user->isLoggedIn()}
-		<li><a class="button" n:href="Sign:out">Вийти</a></li>
-	{else}
-		<li><a class="button" n:href="Sign:in">Увійти</a></li>
-	{/if}
-</ul>
-
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+	{include "elements/header.latte"}
+	{include "Menu/menu.latte"}
 
-    {include Menu/menu.latte}
 	{include content}
+
+	{include "elements/footer.latte"}
 
 	{block scripts}
 	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>

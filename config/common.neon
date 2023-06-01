@@ -1,5 +1,8 @@
 parameters:
-
+    database:
+        dsn: 'mysql:host=localhost;dbname=etistudents'
+        user: 'root'
+        password: ''
 
 application:
 	errorPresenter: Error
@@ -16,6 +19,6 @@ di:
 		parameters: no
 		tags: no
 
-security:
-	users:
-		admin: secret # логін 'admin', пароль 'secret'
+
+services:
+	- App\MyAuthenticator\MyAuthenticator

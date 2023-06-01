@@ -4,9 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbaffb8a8445739b6af190f33738c6458
+class ComposerStaticInitbdb42b2a40f46677c3910b08bd8e2caa
 {
     public static $files = array (
+        '9b38cf48e83f5d8f60375221cd213eee' => __DIR__ . '/..' . '/phpstan/phpstan/bootstrap.php',
         'd507e002f7fce7f0c6dbf1f22edcb902' => __DIR__ . '/..' . '/tracy/tracy/src/Tracy/functions.php',
     );
 
@@ -14,6 +15,10 @@ class ComposerStaticInitbaffb8a8445739b6af190f33738c6458
         'S' => 
         array (
             'Symfony\\Thanks\\' => 15,
+        ),
+        'P' => 
+        array (
+            'PHPStan\\' => 8,
         ),
         'A' => 
         array (
@@ -26,9 +31,13 @@ class ComposerStaticInitbaffb8a8445739b6af190f33738c6458
         array (
             0 => __DIR__ . '/..' . '/symfony/thanks/src',
         ),
+        'PHPStan\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpstan-nette/src',
+        ),
         'App\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/app',
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 
@@ -671,9 +680,9 @@ class ComposerStaticInitbaffb8a8445739b6af190f33738c6458
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbaffb8a8445739b6af190f33738c6458::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbaffb8a8445739b6af190f33738c6458::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitbaffb8a8445739b6af190f33738c6458::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbdb42b2a40f46677c3910b08bd8e2caa::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbdb42b2a40f46677c3910b08bd8e2caa::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitbdb42b2a40f46677c3910b08bd8e2caa::$classMap;
 
         }, null, ClassLoader::class);
     }
